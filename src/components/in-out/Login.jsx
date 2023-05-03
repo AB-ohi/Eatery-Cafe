@@ -35,7 +35,7 @@ const Login = () => {
                     </div>
                     <button>Sing Up</button>
                     <p className='text-error'></p>
-                    <p >New to Ema-john? <Link to=''>Sing Up</Link> </p>
+                    <p >New to Ema-john? <Link to='/singUp'>Sing Up</Link> </p>
                     <div className='other-sing-in-border'>
                         <div/>
                         <p style={{color:'white'}}>or</p>

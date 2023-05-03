@@ -1,11 +1,10 @@
-*{
-    color: black;
-}
+
 .login-page{
     background-image: url(../../picture/crop-plate-with-salad.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: wheat;
+    height: 100%;
 
 }
 
@@ -30,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 821px;
 }
 
 .from-control button{
