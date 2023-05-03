@@ -75,7 +75,7 @@ const Home = () => {
                 <p>{chef.Likes}</p>
             </div>
 
-            <button className="btn">view details</button>
+            <button>view details</button>
         </div>
       ))}
       </div>
