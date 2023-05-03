@@ -17,5 +17,40 @@
 
 .card-chef{
     display: grid;
+    gap: 15px;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.cart-body{
+    border: 2px solid pink;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.cart-body img{
+    height: 400px;
+    width: 400px;
+    border-radius: 8px 8px 0 0;
+}
+.chef-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chef-name p{
+    margin: 0;
+}
+
+.chef-detail{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.btn{
+    border: none;
+    background: linear-gradient(90deg, rgba(180,0,85,1) 0%, rgba(125,0,0,1) 100%);
+    color: aliceblue;
 }

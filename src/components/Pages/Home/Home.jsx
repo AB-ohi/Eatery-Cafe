@@ -66,16 +66,16 @@ const Home = () => {
         key={chef.id}
         >
             <img src={chef.chefPicture}/>
-            <div>
+            <div className="chef-name">
                 <h2>{chef.chefName}</h2>
-                <p>{chef.Recipes}</p>
+                <p>Recipes: {chef.Recipes}</p>
             </div>
-            <div>
+            <div className="chef-detail">
                 <p>{chef.yearsExperience}</p>
                 <p>{chef.Likes}</p>
             </div>
 
-            <button>view details</button>
+            <button className="btn">view details</button>
         </div>
       ))}
       </div>
