@@ -1,46 +1,24 @@
-import React, { useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import app from '../../Firebase/Firebase';
 
-
+export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
-const AuthProvider = () => {
+const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
-        setLoading(false);
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
-    const singInUser = (email, password) => {
-        setLoading(false);
-        return signInWithEmailAndPassword(auth,email,password)
-    }
+  
 
-    const logOut = () => {
-        setLoading(false);
-        return signOut(auth)
-    }
     
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, loggedUser=> {
-            console.log("user is inside ", loggedUser)
-            setUser(loggedUser)
-            setLoading(false);
-        })
-
-        return () =>{
-            unsubscribe();
-        }
-    },[])
     const authInfo = {
         user,
-        loading,
         createUser,
-        singInUser,
-        logOut,
     }
 
     return (

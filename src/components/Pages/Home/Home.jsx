@@ -58,7 +58,9 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+        <h1 style={{textAlign:'center'}}>chef list</h1>
       <div  className="card-chef">
+
       {chef.map((chef) => (
         <div className="cart-body"
         key={chef.id}

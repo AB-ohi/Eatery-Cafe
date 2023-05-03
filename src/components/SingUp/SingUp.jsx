@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+
 
 const SingUp = () => {
-
-    const { createUser } = useContext(AuthContex);
     
     const handelToSignIn = event => {
         event.preventDefault();
@@ -15,16 +15,12 @@ const SingUp = () => {
         const photo = form.photo.value;
 
         console.log(name, email, password, photo)
-        createUser(email, password)
-        .then (result =>{
-            const createdUser = result.user;
 
+        createUser (email, password)
+        .then(result => {
+            const createdUser = result.createUser
             console.log(createdUser)
         })
-        .catch(error =>{
-            console.log(error)
-        })
-
         
     }
 
