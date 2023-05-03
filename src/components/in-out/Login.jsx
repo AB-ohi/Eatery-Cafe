@@ -20,10 +20,11 @@ const Login = () => {
     }
     return (
         <div className='login-page'>
-            <h1>Login</h1>
+            <h1 style={{textAlign:'center'}}>Login</h1>
             <div className='from-position'>
             <form onSubmit={handelToSignIn}>
                 <div className='from-control'>
+                
                     <div className='input-filed'>
                         <label>Email</label>
                         <input type="email" name="email" id="" required />
@@ -33,9 +34,10 @@ const Login = () => {
                         <input type="password" name="password" id="" required />
                         
                     </div>
-                    <button>Sing Up</button>
+                    
+                    <button>Login</button>
                     <p className='text-error'></p>
-                    <p >New to Ema-john? <Link to='/singUp'>Sing Up</Link> </p>
+                    <p >New to Eatery . Cafe <Link to='/singUp'>Sing Up</Link> </p>
                     <div className='other-sing-in-border'>
                         <div/>
                         <p style={{color:'white'}}>or</p>
