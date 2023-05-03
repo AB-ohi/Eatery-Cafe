@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import './Home.css'
 
 const Home = () => {
+    const [chef, setChef] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:1000/chef')
+        .then(res => res.json())
+        .then(data => setChef(data))
+        .catch(error => console.log(error))
+    },[])
   return (
     <div>
       <Carousel>
@@ -13,8 +21,8 @@ const Home = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Delicious Recipes</h3>
+            <p className="caro-p">inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-field">
@@ -26,7 +34,7 @@ const Home = () => {
 
           <Carousel.Caption>
             <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="caro-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-field">
@@ -38,12 +46,15 @@ const Home = () => {
 
           <Carousel.Caption>
             <h3>Third slide label</h3>
-            <p>
+            <p className="caro-p">
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div>
+        
+      </div>
     </div>
   );
 };

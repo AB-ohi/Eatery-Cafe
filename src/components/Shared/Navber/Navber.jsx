@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import chefCard from '../../Pages/Home/chefCard';
 import './Navber.css'
 const Navber = () => {
     return (
-        <div>
+        <div className=''>
             <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#">Eatery <samp className='name'>.</samp> Cafe</Navbar.Brand>
+        <Navbar.Brand href='/'>Eatery <samp className='name'>.</samp> Cafe</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

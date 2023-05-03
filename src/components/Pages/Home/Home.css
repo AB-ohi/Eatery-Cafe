@@ -6,3 +6,11 @@
     height: 100%;
     background: linear-gradient(90deg, rgba(130,52,0,0.27494747899159666) 0%, rgba(226,226,226,0.45702030812324934) 100%);
 }
+
+.caro-p{
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(130,52,0,0.27494747899159666) 0%, rgba(199,59,59,0.45702030812324934) 100%);
+    border-radius: 8px;
+}
