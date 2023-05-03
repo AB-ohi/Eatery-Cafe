@@ -22,9 +22,42 @@ const Footer = () => {
             </div>
             <div>
                 <h1>Opening Hours</h1>
+                <div className='set-time'>
+                <div className='set-day'>
+                    <h4>Sunday</h4>
+                    <h4>Sunday</h4>
+                    <h4>Monday</h4>
+                    <h4>Tuesday</h4>
+                    <h4>Wednesday</h4>
+                    <h4>Thursday</h4>
+                    <h4>Friday</h4>
+                </div>
+                <div>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>10:00 am-08:00 pm</p>
+                    <p>Closed</p>
+                </div>
+                </div>
                 
+
             </div>
-            <div>3</div>
+            <div>
+            <h1>Contact Us</h1>
+            <div className='input-filed'>
+                        <label >Email</label>
+                        <input style={{color:'black'}} type="email" name="email" id="" required />
+                    </div>
+                    <div className='input-filed'>
+                        <label>Massage</label>
+                        <input style={{color:'black'}} type="text" name="massage" id="" required />
+                        
+                    </div>
+                    <button className='footer-btn'>send</button>
+            </div>
         </div>
     );
 };
