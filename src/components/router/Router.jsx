@@ -25,7 +25,6 @@ const router = createBrowserRouter([
         },
         {
           path:'/singUp',
-          element:<singUp></singUp>
         }
       ]
     },

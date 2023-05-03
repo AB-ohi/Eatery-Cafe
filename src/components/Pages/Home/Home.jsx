@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Carousel from 'react-bootstrap/Carousel';
-import './Home.css'
+import Carousel from "react-bootstrap/Carousel";
+import "./Home.css";
 
 const Home = () => {
-    const [chef, setChef] = useState([]);
+  const [chef, setChef] = useState([]);
 
-    useEffect(() =>{
-        fetch('http://localhost:1000/chef')
-        .then(res => res.json())
-        .then(data => setChef(data))
-        .catch(error => console.log(error))
-    },[])
+  useEffect(() => {
+    fetch("http://localhost:1000/chef")
+      .then((res) => res.json())
+      .then((data) => setChef(data))
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div>
       <Carousel>
@@ -22,7 +22,11 @@ const Home = () => {
           />
           <Carousel.Caption>
             <h3>Delicious Recipes</h3>
-            <p className="caro-p">inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
+            <p className="caro-p">
+              inappropriate behavior is often laughed off as “boys will be
+              boys,” women face higher conduct standards especially in the
+              workplace. That’s why it’s crucial that, as women.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-field">
@@ -34,7 +38,9 @@ const Home = () => {
 
           <Carousel.Caption>
             <h3>Second slide label</h3>
-            <p className="caro-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="caro-p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-field">
@@ -52,8 +58,24 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div>
-        
+      <div  className="card-chef">
+      {chef.map((chef) => (
+        <div className="cart-body"
+        key={chef.id}
+        >
+            <img src={chef.chefPicture}/>
+            <div>
+                <h2>{chef.chefName}</h2>
+                <p>{chef.Recipes}</p>
+            </div>
+            <div>
+                <p>{chef.yearsExperience}</p>
+                <p>{chef.Likes}</p>
+            </div>
+
+            <button>view details</button>
+        </div>
+      ))}
       </div>
     </div>
   );
