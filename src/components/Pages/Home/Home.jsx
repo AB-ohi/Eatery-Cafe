@@ -58,7 +58,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-        <h1 style={{textAlign:'center'}}>chef list</h1>
+        <h1 style={{textAlign:'center', margin:'40px 0 50px 0' }}>chef list</h1>
       <div  className="card-chef">
 
       {chef.map((chef) => (
