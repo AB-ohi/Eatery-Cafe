@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa'
 import chefCard from '../../Pages/Home/chefCard';
 import './Navber.css'
+import { AuthContext } from '../../provider/AuthProvider';
 const Navber = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+
+  const handelLogOut = () =>{
+    logOut()
+    .then()
+    .catch(error =>console.log(error))
+  }
     return (
         <div className=''>
             <Navbar bg="light" expand="lg">
@@ -19,7 +29,17 @@ const Navber = () => {
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
           </Nav>
-            <Link to='/login'><Button variant="danger">Login</Button></Link>
+          {
+            user && <p style={{margin:'0', paddingRight:'14px'}}><FaUserCircle style={{fontSize:'26px'}}></FaUserCircle></p>
+          }
+          
+          {user ?
+            <Button onClick={handelLogOut} variant="danger">LogOut</Button>:
+            <Link to='login'>
+            <Button variant="danger">Login</Button>
+            </Link>
+            }
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

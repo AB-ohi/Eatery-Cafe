@@ -36,6 +36,10 @@
     
 }
 
+.cart-body button a{
+    color: black;
+    text-decoration: none;
+}
 .cart-body button:hover{
     border: 2px solid rgba(233, 37, 66, 0);
     background: linear-gradient(90deg, rgba(180,0,85,1) 0%, rgba(125,0,0,1) 100%);

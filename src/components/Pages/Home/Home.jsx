@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Home.css";
+import { Link } from "react-router-dom";
+import Extea from "../../Extra/Extea";
 
 const Home = () => {
   const [chef, setChef] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1000/chef")
+    fetch("https://chef-server-ab-ohi.vercel.app/chef")
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((error) => console.log(error));
@@ -71,14 +73,15 @@ const Home = () => {
                 <p>Recipes: {chef.Recipes}</p>
             </div>
             <div className="chef-detail">
-                <p>{chef.yearsExperience}</p>
-                <p>{chef.Likes}</p>
+                <p>Experience:{chef.yearsExperience}year+</p>
+                <p>Likes:{chef.Likes}M</p>
             </div>
 
-            <button>view details</button>
+            <button><Link to='/view'>view details</Link></button>
         </div>
       ))}
       </div>
+      <Extea></Extea>
     </div>
   );
 };

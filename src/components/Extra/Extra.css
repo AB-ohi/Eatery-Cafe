@@ -1,0 +1,10 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+
+}
+.menu-items img{
+    width: 200px;
+    height: 200px;
+
+}
